@@ -1,0 +1,11 @@
+{% extends 'employees/base.html' %}
+{% block title %}Employee Form{% endblock %}
+{% block content %}
+<h2 class="mb-4 text-center">{{ form.instance.pk|yesno:"Update Employee,Create Employee" }}</h2>
+<form method="post" class="border p-4 rounded shadow">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-success">Save</button>
+    <a href="{% url 'employee_list' %}" class="btn btn-secondary">Back</a>
+</form>
+{% endblock %}
