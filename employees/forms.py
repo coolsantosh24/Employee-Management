@@ -4,7 +4,7 @@ from .models import Employee
 class EmployeeForm(forms.ModelForm):
     class Meta:
         model = Employee
-        fields = ['name', 'email', 'department', 'salary', 'hire_date']
+        fields = ['name', 'email', 'department', 'salary', 'hire_date', 'photo']  # Added 'photo'
         widgets = {
-            'hire_date': forms.DateInput(attrs={'type': 'date'})
+            'hire_date': forms.DateInput(attrs={'type': 'date'})  # <-- Parenthesis closed here
         }

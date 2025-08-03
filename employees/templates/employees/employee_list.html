@@ -5,6 +5,7 @@
 <table class="table table-bordered table-hover">
     <thead class="table-dark">
         <tr>
+            <th>Photo</th>
             <th>Name</th>
             <th>Email</th>
             <th>Department</th>
@@ -16,6 +17,13 @@
     <tbody>
         {% for emp in employees %}
         <tr>
+            <td>
+                {% if emp.photo %}
+                    <img src="{{ emp.photo.url }}" alt="{{ emp.name }}" style="max-width:60px; max-height:60px;" class="img-thumbnail">
+                {% else %}
+                    <span class="text-muted">No photo</span>
+                {% endif %}
+            </td>
             <td>{{ emp.name }}</td>
             <td>{{ emp.email }}</td>
             <td>{{ emp.department }}</td>
